@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prajesh Banerjee | Digital Marketer & MERN Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      @media (prefers-color-schem: dark) {
+        body {
+          font-family: "Poppins", sans-serif;
+          scroll-behavior: smooth;
+          background: #07529c;
+          color: #1e293b;
+          transition: all 0.3s ease;
+          font-family: "Poppins", sans-serif;
+          scroll-behavior: smooth;
+          background: linear-gradient(to right, #e0eafc, #cfdef3); /* Elegant light gradient */
+          color: #1e293b;
+          transition: all 0.3s ease;
+        }
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .skill-bar {
+        transition: width 1.5s ease-out;
+        width: 0; /* Initially set to 0 */
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0830e0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      .active-link:after {
+        width: 100%;
+      }
+
+      .mobile-menu {
+        transition: all 0.3s ease;
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      .mobile-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .typewriter {
+        overflow: hidden;
+        border-right: 2px solid #333;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #333;
+        }
+      }
+
+      .dark-theme {
+        background: #0f172a !important;
+        color: #f8fafc !important;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-indigo-600">PrajeshBanerjee</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link active-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button id="menuButton" class="md:hidden focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="mobile-menu fixed top-16 left-0 w-full bg-white shadow-md p-4 hidden"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="#home" class="nav-link active-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-40 pb-20 text-white">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-12 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+            Hi, I'm <span class="text-yellow-300">Prajesh Banerjee</span>
+          </h1>
+          <h2 id="typewriter" class="text-2xl md:text-3xl mb-6"></h2>
+          <p class="text-lg mb-8 opacity-90">
+            I help businesses grow their online presence and build powerful web
+            applications.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+            >
+              Hire Me
+            </a>
+            <a
+              href="#portfolio"
+              class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition duration-300"
+            >
+              View Work
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <div
+            class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl"
+          >
+            <img
+              src="hero_img.jpg"
+              alt="Professional portrait of a digital marketer and developer smiling confidently in business casual attire"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+            <div class="w-64 h-64 rounded-lg overflow-hidden shadow-xl">
+              <img
+                src="hero.img.jpg"
+                alt="Casual working environment showing me working on a laptop with coding interface and marketing analytics dashboard visible"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="md:w-2/3 md:pl-12">
+            <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
+            <p class="mb-6 text-lg leading-relaxed">
+              I'm a passionate digital marketer and MERN stack developer with a
+              unique blend of technical and marketing skills. My journey began
+              in digital marketing, where I specialized in SEO, content
+              marketing, and social media strategies. Realizing the power of
+              combining marketing with development, I expanded my skills into
+              full-stack JavaScript development.
+            </p>
+            <p class="mb-6 text-lg leading-relaxed">
+              I'm particularly interested in building marketing-focused web
+              applications that not only look great but also perform well in
+              search engines and convert visitors effectively.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center">
+                <i class="fas fa-user-check text-indigo-500 mr-3"></i>
+                <span class="font-medium">Digital Marketing</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-code text-indigo-500 mr-3"></i>
+                <span class="font-medium">Web Development</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-chart-line text-indigo-500 mr-3"></i>
+                <span class="font-medium">SEO & Analytics</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-server text-indigo-500 mr-3"></i>
+                <span class="font-medium">Backend Development</span>
+              </div>
+            </div>
+            <a
+              href="PRAJESH-BANERJEE-DigitalMarketer-Resume.pdf"
+              class="inline-block mt-8 px-6 py-3 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-700 transition duration-300"
+            >
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50  ">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">My Skills</h2>
+
+        <div class="max-w-6xl mx-auto px-4 py-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+    <!-- Digital Marketing Section -->
+    <div>
+      <h3 class="text-2xl font-semibold mb-6 text-indigo-600 flex items-center">
+        <i class="fas fa-bullhorn mr-3"></i> Digital Marketing
+      </h3>
+      <div class="space-y-4">
+        <!-- Skill -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">SEO</span>
+            <span>80%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">Social Media Marketing</span>
+            <span>75%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">Content Marketing</span>
+            <span>85%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">Google Analytics</span>
+            <span>70%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MERN Stack Development Section -->
+    <div>
+      <h3 class="text-2xl font-semibold mb-6 text-indigo-600 flex items-center">
+        <i class="fas fa-code mr-3"></i> MERN Stack Development
+      </h3>
+      <div class="space-y-4">
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">MongoDB</span>
+            <span>75%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">Express.js</span>
+            <span>70%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">React.js</span>
+            <span>80%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">Node.js</span>
+            <span>75%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-medium">JavaScript (ES6+)</span>
+            <span>85%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div class="bg-indigo-500 h-3 rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">My Portfolio</h2>
+
+        <!-- Portfolio Filter -->
+        <div class="flex justify-center mb-12">
+          <div class="inline-flex rounded-md shadow-sm">
+            <button
+              data-filter="all"
+              class="active-filter px-4 py-2 text-sm font-medium rounded-l-lg bg-indigo-600 text-white hover:bg-indigo-700 transition duration-300"
+            >
+              All
+            </button>
+            <button
+              data-filter="marketing"
+              class="px-4 py-2 text-sm font-medium bg-white border-t border-b border-gray-200 hover:bg-gray-100 transition duration-300"
+            >
+              Marketing
+            </button>
+            <button
+              data-filter="development"
+              class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white border-t border-b border-r border-gray-200 hover:bg-gray-100 transition duration-300"
+            >
+              Web Apps
+            </button>
+          </div>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 - Marketing -->
+          <div class="project-card" data-category="marketing">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-500 h-full flex flex-col"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/736x/df/41/33/df4133d0f5d438bd3bdf6fb444358ddd.jpg"
+                  alt="Digital marketing dashboard showing analytics for a successful campaign"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2">
+                  Digital Marketing Campaign
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Increased client's website traffic by 150% through targeted
+                  SEO and social media strategies.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >SEO</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Content</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Analytics</span
+                  >
+                </div>
+                <!-- <a
+                  href="#"
+                  class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition duration-300"
+                >
+                  View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 - Development -->
+          <div class="project-card" data-category="development">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-500 h-full flex flex-col"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/1200x/e4/a6/42/e4a642ef9f53288d388b6ffedbaa8abb.jpg"
+                  alt="E-commerce application built with MERN stack featuring product listings"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                <p class="text-gray-600 mb-4">
+                  Full-featured online store built with MERN stack with
+                  integrated payment processing.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Node.js</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Stripe</span
+                  >
+                </div>
+                <!-- <a
+                  href="#"
+                  class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition duration-300"
+                >
+                  View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 - Both -->
+          <div class="project-card" data-category="marketing,development">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-500 h-full flex flex-col"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/736x/74/73/e3/7473e3713efa479ae79b90d1d89e6233.jpg"
+                  alt="Marketing automation tool dashboard showing campaign metrics"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2">
+                  Marketing Automation Tool
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Custom-built tool that combines digital marketing with web
+                  development for automated campaigns.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >MERN</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Marketing</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Automation</span
+                  >
+                </div>
+                <!-- <a
+                  href="#"
+                  class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition duration-300"
+                >
+                  View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 - Marketing -->
+          <div class="project-card" data-category="marketing">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-500 h-full flex flex-col"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/736x/9e/30/c5/9e30c5cc8bc91496277038e875ea8ad5.jpg"
+                  alt="SEO strategy visualization showing keywords and rankings improvements"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2">SEO Optimization Project</h3>
+                <p class="text-gray-600 mb-4">
+                  Implemented SEO strategies that improved organic traffic by
+                  200% for a local business.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >SEO</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Keywords</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Content</span
+                  >
+                </div>
+                <!-- <a
+                  href="#"
+                  class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition duration-300"
+                >
+                  View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 - Development -->
+          <div class="project-card" data-category="development">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-500 h-full flex flex-col"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/1200x/8b/ac/5d/8bac5d9e6280076d13fb873fec58490d.jpg"
+                  alt="Task management application with drag and drop interface"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                <p class="text-gray-600 mb-4">
+                  Productivity application with real-time updates built with
+                  MERN stack and Socket.io.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Express</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Socket.io</span
+                  >
+                </div>
+                <!-- <a
+                  href="#"
+                  class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition duration-300"
+                >
+                  View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 - Both -->
+          <div class="project-card" data-category="marketing,development">
+            <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-500 h-full flex flex-col"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/736x/d1/6c/d8/d16cd8b1b589999b9b1688289b107239.jpg"
+                  alt="Marketing analytics dashboard with conversion funnel visualization"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                <p class="text-gray-600 mb-4">
+                  Custom analytics platform combining marketing data with
+                  interactive visualizations.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Node.js</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Google Analytics</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >Chart.js</span
+                  >
+                </div>
+                <!-- <a
+                  href="#"
+                  class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition duration-300"
+                >
+                  View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block px-6 py-3 border-2 border-indigo-600 text-indigo-600 font-medium rounded-full hover:bg-indigo-600 hover:text-white transition duration-300"
+          >
+            View More Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">
+          Client Testimonials
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img
+                  src="https://i.pinimg.com/736x/b6/1e/0c/b61e0c05ae8841e22d342142782a58aa.jpg"
+                  alt="Portrait of satisfied client smiling with arms crossed in professional attire"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold">John Smith</h4>
+                <p class="text-gray-600 text-sm">
+                  Marketing Director, TechCorp
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Working with YourName was a game-changer for our digital
+              strategy. Their unique combination of marketing expertise and
+              technical skills helped us build a website that not only looks
+              great but performs exceptionally in search rankings."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img
+                  src="https://i.pinimg.com/736x/6b/ba/f2/6bbaf2d853205378317e0600406ea123.jpg"
+                  alt="Portrait of happy client in casual business wear giving thumbs up gesture"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <p class="text-gray-600 text-sm">CEO, Startup Inc</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "The web application YourName developed for us exceeded all
+              expectations. They understood our marketing needs and translated
+              them into technical requirements perfectly. Their dual expertise
+              is truly rare and valuable."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-8">
+          <!-- <a
+            href="#"
+            class="text-indigo-600 font-medium hover:text-indigo-800 transition duration-300 flex items-center"
+          >
+            Read More Testimonials <i class="fas fa-arrow-right ml-2"></i>
+          </a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Get In Touch</h2>
+
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+            <h3 class="text-2xl font-semibold mb-6">Let's work together</h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Whether you need help with your digital marketing strategy, want
+              to build a new web application, or both, I'd love to hear about
+              your project. Feel free to reach out through the contact form or
+              directly via email or phone.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <i class="fas fa-envelope text-indigo-500 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium">Email</h4>
+                  <p class="text-gray-600">prajeshbanerjee2@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-phone text-indigo-500 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium">Phone</h4>
+                  <p class="text-gray-600">+91 7478162085</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-map-marker-alt text-indigo-500 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium">Location</h4>
+                  <p class="text-gray-600">Uttarpara, Hooghly,712232</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex mt-8 space-x-4">
+              <a
+                href="#"
+                class="inline-block w-10 h-10 rounded-full bg-gray-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition duration-300 flex items-center justify-center"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/prajesh-banerjee-1a60312b6/"
+                class="inline-block w-10 h-10 rounded-full bg-gray-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition duration-300 flex items-center justify-center"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/Prajesh1218"
+                class="inline-block w-10 h-10 rounded-full bg-gray-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition duration-300 flex items-center justify-center"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/pbanerjee96/"
+                class="inline-block w-10 h-10 rounded-full bg-gray-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition duration-300 flex items-center justify-center"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+                  placeholder="Your message"
+                  required
+                ></textarea>
+              </div>
+              <input type="hidden" name="formKey" value="portfolioForm" />
+
+              <button
+                type="submit"
+                class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+
+            <script>
+              const scriptURL =
+                "https://script.google.com/macros/s/AKfycbxHbyBcsOfEgNrEaHhf4psabJ8E0jiyZNpI5oTfK32GjK5aB6DGDtN6sdfw_zxm1eJUQw/exec"; // Paste the Apps Script URL here
+              const form = document.getElementById("contactForm");
+
+              form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                fetch(scriptURL, {
+                  method: "POST",
+                  body: new FormData(form),
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                })
+                  .then((response) => {
+                    alert("Message sent successfully!");
+                    form.reset();
+                  })
+                  .catch((error) => {
+                    alert("Error! Please try again.");
+                    console.error("Error!", error.message);
+                  });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="text-2xl font-bold text-indigo-400 mb-2">
+              Prajesh Banerjee
+            </div>
+            <p class="text-gray-400 max-w-md">
+              Bringing together digital marketing expertise and full-stack
+              development skills to create impactful online solutions.
+            </p>
+          </div>
+          <div class="flex flex-col items-center md:items-end">
+            <div class="flex space-x-6 mb-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/prajesh-banerjee-1a60312b6/"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/Prajesh1218"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/pbanerjee96/"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm">
+              &copy; 2025 Prajesh Banerjee. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-indigo-700 transition duration-300 opacity-0 invisible"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // DOM Elements
+      const menuButton = document.getElementById("menuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const backToTopButton = document.getElementById("backToTop");
+      const typewriterElement = document.getElementById("typewriter");
+      const skillBars = document.querySelectorAll(".skill-bar");
+      const filterButtons = document.querySelectorAll("[data-filter]");
+      const projectCards = document.querySelectorAll(".project-card");
+      const contactForm = document.getElementById("contactForm");
+      const sections = document.querySelectorAll("section[id]");
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        menuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          mobileMenu.classList.toggle("active");
+
+          // Change icon based on menu state
+          const icon = menuButton.querySelector("i");
+          if (mobileMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!mobileMenu.contains(e.target) && e.target !== menuButton) {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("active");
+            menuButton.querySelector("i").classList.remove("fa-times");
+            menuButton.querySelector("i").classList.add("fa-bars");
+          }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+
+              // Update active nav link
+              navLinks.forEach((navLink) => {
+                navLink.classList.remove("active-link");
+              });
+              this.classList.add("active-link");
+            }
+          });
+        });
+
+        // Back to Top Button
+        backToTopButton.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // Typewriter Effect
+        if (typewriterElement) {
+          const text = "Digital Marketer & MERN Stack Developer";
+          let i = 0;
+
+          function typeWriter() {
+            if (i < text.length) {
+              typewriterElement.textContent += text.charAt(i);
+              i++;
+              setTimeout(typeWriter, Math.random() * 100 + 50);
+            } else {
+              // Add cursor blinking animation
+              typewriterElement.classList.add("typewriter");
+            }
+          }
+
+          setTimeout(typeWriter, 1000);
+        }
+
+        // Portfolio Filter Functionality
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const filterValue = this.getAttribute("data-filter");
+
+            // Update active filter button
+            filterButtons.forEach((btn) => {
+              btn.classList.remove(
+                "active-filter",
+                "bg-indigo-600",
+                "text-white"
+              );
+              btn.classList.add("bg-white");
+            });
+
+            if (filterValue !== "all") {
+              this.classList.add(
+                "active-filter",
+                "bg-indigo-600",
+                "text-white"
+              );
+              this.classList.remove("bg-white");
+            } else {
+              this.classList.add("active-filter");
+            }
+
+            // Filter projects
+            projectCards.forEach((card) => {
+              const categories = card.getAttribute("data-category").split(",");
+              if (filterValue === "all" || categories.includes(filterValue)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        // Set initial active filter
+        document
+          .querySelector('[data-filter="all"]')
+          .classList.add("active-filter");
+
+        // Contact Form Submission
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            // Simple validation
+            let isValid = true;
+            const requiredFields = ["name", "email", "subject", "message"];
+
+            requiredFields.forEach((field) => {
+              if (!formData.get(field)) {
+                isValid = false;
+                const input = document.querySelector(`[name="${field}"]`);
+                input.classList.add("border-red-500");
+                input.addEventListener("input", function () {
+                  this.classList.remove("border-red-500");
+                });
+              }
+            });
+
+            if (!isValid) {
+              alert("Please fill in all required fields.");
+              return;
+            }
+
+            alert(
+              `Thank you, ${formData.get(
+                "name"
+              )}! Your message has been sent. I'll get back to you soon.`
+            );
+            contactForm.reset();
+          });
+        }
+
+        // Activate skill bars animation when scrolled into view
+        function animateSkillBars() {
+          skillBars.forEach((bar) => {
+            const barPosition = bar.parentElement.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight * 0.8;
+
+            if (
+              barPosition < screenPosition &&
+              !bar.classList.contains("animated")
+            ) {
+              const width = bar.getAttribute("data-width");
+              bar.style.width = width;
+              bar.classList.add("animated");
+            }
+          });
+        }
+
+        // Run once on page load
+        animateSkillBars();
+
+        // Run on scroll
+        window.addEventListener("scroll", animateSkillBars);
+
+        // Update active nav link based on scroll position
+        function updateActiveNav() {
+          const scrollPosition = window.scrollY + 100;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionTop + sectionHeight
+            ) {
+              document.querySelectorAll(".nav-link").forEach((link) => {
+                link.classList.remove("active-link");
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                  link.classList.add("active-link");
+                }
+              });
+            }
+          });
+
+          // Show/hide back to top button
+          if (scrollPosition > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+          } else {
+            backToTopButton.classList.remove("opacity-100", "visible");
+            backToTopButton.classList.add("opacity-0", "invisible");
+          }
+        }
+
+        window.addEventListener("scroll", updateActiveNav);
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+      });
+    </script>
+  </body>
+</html>
